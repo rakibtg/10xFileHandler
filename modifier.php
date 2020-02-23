@@ -1,6 +1,7 @@
 <?php
 /*
   https://stackoverflow.com/questions/32381423/removing-a-line-from-the-middle-of-a-large-file-php
+  http://www.hackingwithphp.com/8/5/0/other-file-functions
 */
   function injectData($file, $data, $position) {
     $temp = fopen('php://temp', "rw+");
