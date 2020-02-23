@@ -18,7 +18,7 @@
     fseek($fd, $position); // seek back
     fwrite($fd, $data . PHP_EOL); // write data
   
-    // rewind($temp);
+    rewind($temp);
     stream_copy_to_stream($temp, $fd); // stich end on again
   
     fclose($temp);
