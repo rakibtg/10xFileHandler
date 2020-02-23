@@ -1,4 +1,7 @@
 <?php
+/*
+  https://stackoverflow.com/questions/32381423/removing-a-line-from-the-middle-of-a-large-file-php
+*/
   function injectData($file, $data, $position) {
     $temp = fopen('php://temp', "rw+");
     $fd = fopen($file, 'r+b');
@@ -15,8 +18,8 @@
     fseek($fd, $position);
     stream_copy_to_stream($fd, $temp); // copy end
   
-    fseek($fd, $position); // seek back
-    fwrite($fd, $data . PHP_EOL); // write data
+    // fseek($fd, $position); // seek back
+    // fwrite($fd, $data . PHP_EOL); // write data
   
     rewind($temp);
     stream_copy_to_stream($temp, $fd); // stich end on again
