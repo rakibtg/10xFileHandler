@@ -7,14 +7,12 @@
     $temp = fopen('php://temp', "rw+");
     $fd = fopen($file, 'r+b');
 
-    // $currentLine = 0;
-    // while (($line = fgets($fd)) !== false) {
-    //   echo $line;
-    //   if (trim($line) == 'Barisal') {
+    while (($line = fgets($fd)) !== false) {
+      echo $line;
+      if (trim($line) == 'Barisal') {
         
-    //   }
-    //   $currentLine++;
-    // }
+      }
+    }
   
     fseek($fd, $position);
     stream_copy_to_stream($fd, $temp); // copy end
