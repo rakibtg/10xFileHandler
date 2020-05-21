@@ -1,6 +1,9 @@
 <?php
 
-  $file = fopen('./test.txt', 'r+');
+  // $sampleFile = './test.txt';
+  $sampleFile = __DIR__ . '/../large-db/db.sdb'; // LOC: 641247
+
+  $file = fopen($sampleFile, 'r+');
   $temp = fopen('php://temp', "rw+");
 
   while (!feof($file)) {
